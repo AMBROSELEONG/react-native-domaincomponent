@@ -3351,7 +3351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^22.13.5":
   version: 22.13.5
   resolution: "@types/node@npm:22.13.5"
   dependencies:
@@ -5745,6 +5745,7 @@ __metadata:
     "@expo/metro-runtime": ~4.0.1
     "@types/jest": ^29.5.14
     "@types/mocha": ^10.0.10
+    "@types/node": ^22.13.5
     expo: ~52.0.37
     expo-status-bar: ~2.0.1
     react: 18.3.1

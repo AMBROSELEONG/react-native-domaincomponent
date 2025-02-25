@@ -1,1 +1,1 @@
-export { DomainTextInput } from './components/TextInput/TextInput';
+export { default as DomainTextInput } from './components/TextInput/TextInput';
