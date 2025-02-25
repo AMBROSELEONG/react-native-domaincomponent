@@ -1,12 +1,13 @@
-import { multiply } from 'domaincomponent';
 import { Text, View, StyleSheet } from 'react-native';
-
-const result = multiply(3, 7);
+import { DomainTextInput } from '../../src/index';
+import { useState } from 'react';
 
 export default function App() {
+  const [text, setText] = useState('');
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result: {text}</Text>
+      <DomainTextInput value="test" onChangeText={setText} secureTextEntry={true}/>
     </View>
   );
 }
