@@ -14,19 +14,21 @@ export default function App() {
     <View style={styles.container}>
       <Text>Result: {text}</Text>
       <DomainTextInput
+        label='User Name'
         name="username"
         nextName='password'
         placeholder="Username"
         helperText={haveerror}
+        left={<TouchableOpacity onPress={() => console.log('test')}><Text>test</Text></TouchableOpacity>}
       />
       <View style={{ marginVertical: 30, marginHorizontal: 10 }}>
         <DomainTextInput
           name='password'
+          label='Password'
           placeholder="Password"
           value={text}
           onChangeText={setText}
           focusColor="#7174F8"
-          left={<TouchableOpacity onPress={() => console.log('test')}><Text>test</Text></TouchableOpacity>}
           right={<Text>@gmail.com</Text>}
           rightWidth={'30%'}
         />

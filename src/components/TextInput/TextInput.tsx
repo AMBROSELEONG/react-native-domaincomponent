@@ -16,6 +16,8 @@ interface DomainTextInputProps extends Omit<TextInputProps, 'style'> {
   rightWidth?: DimensionValue;
   helperText?: string;
   helperTextColor?: string;
+  label?: string;
+  labelColor?: string;
 }
 
 const refsMap = new Map<string, React.RefObject<TextInput>>();
@@ -32,6 +34,7 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(({
   right,
   rightWidth,
   helperText,
+  label,
   helperTextColor = "red",
   ...restProps
 }, ref) => {
@@ -47,6 +50,8 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(({
         refsMap.delete(name);
       };
     }
+
+    return () => { };
   }, [name]);
 
   const handleSubmitEditing = () => {
@@ -56,7 +61,8 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(({
   };
 
   return (
-    <View style={{width: '100%'}}>
+    <View style={{ width: '100%' }}>
+      {label && <View style={[TextInputCSS.labelView]}><Text style={[TextInputCSS.label, { color: isFocused ? focusColor : "#000" }]}>{label}</Text></View>}
       <View style={[
         TextInputCSS.container,
         {
