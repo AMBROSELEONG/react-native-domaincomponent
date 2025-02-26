@@ -1,11 +1,11 @@
-import type { StyleProp, ViewStyle, TextInputProps, TextInputIOSProps, DimensionValue } from 'react-native';
+import type { StyleProp, ViewStyle, TextInputProps, TextInputIOSProps, DimensionValue, ColorValue } from 'react-native';
 import type { ReactNode } from "react";
 
 export interface DomainTextInputProps extends TextInputProps, TextInputIOSProps {
   style?: StyleProp<ViewStyle>;
   width?: number;
   editable?: boolean;
-  focusColor?: string;
+  focusColor?: ColorValue;
   name: string;
   nextName?: string;
   left?: ReactNode;
@@ -13,7 +13,8 @@ export interface DomainTextInputProps extends TextInputProps, TextInputIOSProps 
   right?: ReactNode;
   rightWidth?: DimensionValue;
   helperText?: string;
-  helperTextColor?: string;
+  helperTextColor?: ColorValue;
   label?: string;
-  labelColor?: string;
+  labelColor?: ColorValue;
+  inputColor?: ColorValue;
 }

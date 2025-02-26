@@ -11,5 +11,4 @@ const DomainSwitchButton: React.FC<DomainSwitchButtonProps> = ({
     );
 };
 
-
 export default DomainSwitchButton;

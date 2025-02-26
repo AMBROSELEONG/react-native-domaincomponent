@@ -19,6 +19,7 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(({
   helperText,
   label,
   helperTextColor = "red",
+  inputColor,
   ...restProps
 }, ref) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -58,7 +59,7 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(({
         <TextInput
           {...restProps}
           ref={inputRef}
-          style={TextInputCSS.input}
+          style={[TextInputCSS.input, {color: inputColor ? inputColor : "#000"}]}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           onSubmitEditing={nextName ? handleSubmitEditing : undefined}
