@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
-import { DomainTextInput, DomainLoading, DomainSwitchButton } from '../../src/index';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { DomainTextInput, DomainSwitchButton } from '../../src/index';
 import { useState } from 'react';
 export default function App() {
   const [text, setText] = useState('');
@@ -54,7 +54,9 @@ export default function App() {
         value={isEnabled}
         onValueChange={setIsEnabled}
         trackColor={{ false: '#767577', true: '#81b0ff' }}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'} />
+        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+        ios_backgroundColor="#3e3e3e"
+         />
     </View>
   );
 }
