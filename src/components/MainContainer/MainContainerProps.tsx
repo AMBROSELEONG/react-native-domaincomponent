@@ -1,3 +1,3 @@
-export interface MainContainerProps {
-    children: React.ReactNode;
+export interface DomainMainContainerProps {
+  children: React.ReactNode;
 }

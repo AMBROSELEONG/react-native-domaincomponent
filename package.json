@@ -1,6 +1,6 @@
 {
   "name": "domaincomponent",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "domain ui component",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -52,14 +52,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AMBROSELEONG/domaincomponent.git"
+    "url": "git+https://github.com/AMBROSELEONG/react-native-domaincomponent"
   },
   "author": "Wei Jun Leong <ambroseleong04@gmail.com> (https://github.com/AMBROSELEONG)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AMBROSELEONG/domaincomponent/issues"
+    "url": "https://github.com/AMBROSELEONG/react-native-domaincomponent/issues"
   },
-  "homepage": "https://github.com/AMBROSELEONG/domaincomponent#readme",
+  "homepage": "https://github.com/AMBROSELEONG/react-native-domaincomponent#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
