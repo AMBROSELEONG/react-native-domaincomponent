@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 export const TextInputCSS = StyleSheet.create({
     container: {
@@ -32,3 +32,12 @@ export const TextInputCSS = StyleSheet.create({
         fontSize: 14,
       }
 });
+
+export const ActivityIndicatorCSS = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: Dimensions.get('screen').height * 0.5,
+  },
+})

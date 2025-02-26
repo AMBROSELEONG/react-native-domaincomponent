@@ -1,24 +1,7 @@
 import { TextInput, View, Text } from 'react-native';
-import type { StyleProp, ViewStyle, TextInputProps, DimensionValue } from 'react-native';
 import { TextInputCSS } from "../../objects/style";
 import { useState, forwardRef, useRef, useEffect, useImperativeHandle } from 'react';
-import type { ReactNode } from "react";
-interface DomainTextInputProps extends Omit<TextInputProps, 'style'> {
-  style?: StyleProp<ViewStyle>;
-  width?: number;
-  editable?: boolean;
-  focusColor?: string;
-  name: string;
-  nextName?: string;
-  left?: ReactNode;
-  leftWidth?: DimensionValue;
-  right?: ReactNode;
-  rightWidth?: DimensionValue;
-  helperText?: string;
-  helperTextColor?: string;
-  label?: string;
-  labelColor?: string;
-}
+import type { DomainTextInputProps } from './TextInputProps';
 
 const refsMap = new Map<string, React.RefObject<TextInput>>();
 
