@@ -63,7 +63,7 @@ export default App;
 
 ![image](https://github.com/user-attachments/assets/f266158e-5bc2-4e52-ae95-4611f1b22f7f)
 
-![WhatsApp Image 2025-02-26 at 16 31 11_b36ce195](https://github.com/user-attachments/assets/96bc67c1-0e34-439f-be0b-0abf20ecaca9)
+<img src="https://github.com/user-attachments/assets/96bc67c1-0e34-439f-be0b-0abf20ecaca9" style="width:300px; height:auto;">
 
 ## Props
 
