@@ -1,83 +1,111 @@
-import type { DomainSelectProps } from "./SelectProps";
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, FlatList, Modal } from "react-native";
-import { SelectCSS } from "../../objects/style";
+import type { DomainSelectProps } from './SelectProps';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, FlatList, Modal } from 'react-native';
+import { SelectCSS } from '../../objects/style';
 
 const DomainSelect: React.FC<DomainSelectProps> = ({
-    label,
-    style,
-    options,
-    value,
-    onChange,
-    placeholder,
-    resetButton = false,
+  label,
+  style,
+  options,
+  value,
+  onChange,
+  placeholder,
+  resetButton = false,
 }) => {
-    const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
-    const handleSelect = (id: string) => {
-        onChange?.(id);
-        setModalVisible(false);
-    };
+  const handleSelect = (id: string) => {
+    onChange?.(id);
+    setModalVisible(false);
+  };
 
-    const handleReset = () => {
-        onChange?.(undefined);
-    };
+  const handleReset = () => {
+    onChange?.(undefined);
+  };
 
-    const selectedOption = options.find((opt) => opt.id === value);
+  const selectedOption = options.find((opt) => opt.id === value);
 
-    return (
-        <View style={[SelectCSS.container, style]}>
-            {label && <View style={SelectCSS.labelView}>
-                <Text style={SelectCSS.label}>{label}</Text>
-            </View>}
-
-            <View style={SelectCSS.selectWrapper}>
-                <TouchableOpacity style={SelectCSS.selector} onPress={() => setModalVisible(true)}>
-                    {selectedOption ? (
-                        <View style={SelectCSS.selectedContainer}>
-                            {selectedOption.left && <View style={[SelectCSS.sideContainer, { marginRight: 20 }]}>{selectedOption.left}</View>}
-                            <Text style={SelectCSS.selectedText}>{selectedOption.name}</Text>
-                            {selectedOption.right && <View style={[SelectCSS.sideContainer, { marginLeft: 20 }]}>{selectedOption.right}</View>}
-                        </View>
-                    ) : (
-                        <Text style={SelectCSS.selectedText}>{placeholder}</Text>
-                    )}
-                </TouchableOpacity>
-                {(resetButton &&
-                    value && (
-                        <TouchableOpacity style={SelectCSS.resetButton} onPress={handleReset}>
-                            <Text style={SelectCSS.resetButtonText}>X</Text>
-                        </TouchableOpacity>
-                    ))}
-            </View>
-
-            <Modal visible={modalVisible} transparent animationType="slide">
-                <View style={SelectCSS.modalContainer}>
-                    <View style={SelectCSS.modalContent}>
-                        {label && <Text style={SelectCSS.title}>{label}</Text>}
-                        <FlatList
-                            data={options}
-                            keyExtractor={(item) => item.id}
-                            scrollEnabled
-                            showsVerticalScrollIndicator={false}
-                            renderItem={({ item }) => (
-                                <TouchableOpacity style={SelectCSS.option} onPress={() => handleSelect(item.id)}>
-                                    {item.left && <View style={[SelectCSS.sideContainer, { marginRight: 20 }]}>{item.left}</View>}
-
-                                    <Text style={SelectCSS.optionText}>{item.name}</Text>
-
-                                    {item.right && <View style={[SelectCSS.sideContainer, { marginLeft: 20 }]}>{item.right}</View>}
-                                </TouchableOpacity>
-                            )}
-                        />
-                        <TouchableOpacity style={SelectCSS.closeButton} onPress={() => setModalVisible(false)}>
-                            <Text style={SelectCSS.closeButtonText}>Close</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </Modal>
+  return (
+    <View style={[SelectCSS.container, style]}>
+      {label && (
+        <View style={SelectCSS.labelView}>
+          <Text style={SelectCSS.label}>{label}</Text>
         </View>
-    );
-}
+      )}
+
+      <View style={SelectCSS.selectWrapper}>
+        <TouchableOpacity
+          style={SelectCSS.selector}
+          onPress={() => setModalVisible(true)}
+        >
+          {selectedOption ? (
+            <View style={SelectCSS.selectedContainer}>
+              {selectedOption.left && (
+                <View style={[SelectCSS.sideContainer, { marginRight: 20 }]}>
+                  {selectedOption.left}
+                </View>
+              )}
+              <Text style={SelectCSS.selectedText}>{selectedOption.name}</Text>
+              {selectedOption.right && (
+                <View style={[SelectCSS.sideContainer, { marginLeft: 20 }]}>
+                  {selectedOption.right}
+                </View>
+              )}
+            </View>
+          ) : (
+            <Text style={SelectCSS.selectedText}>{placeholder}</Text>
+          )}
+        </TouchableOpacity>
+        {resetButton && value && (
+          <TouchableOpacity style={SelectCSS.resetButton} onPress={handleReset}>
+            <Text style={SelectCSS.resetButtonText}>X</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+
+      <Modal visible={modalVisible} transparent animationType="slide">
+        <View style={SelectCSS.modalContainer}>
+          <View style={SelectCSS.modalContent}>
+            {label && <Text style={SelectCSS.title}>{label}</Text>}
+            <FlatList
+              data={options}
+              keyExtractor={(item) => item.id}
+              scrollEnabled
+              showsVerticalScrollIndicator={false}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={SelectCSS.option}
+                  onPress={() => handleSelect(item.id)}
+                >
+                  {item.left && (
+                    <View
+                      style={[SelectCSS.sideContainer, { marginRight: 20 }]}
+                    >
+                      {item.left}
+                    </View>
+                  )}
+
+                  <Text style={SelectCSS.optionText}>{item.name}</Text>
+
+                  {item.right && (
+                    <View style={[SelectCSS.sideContainer, { marginLeft: 20 }]}>
+                      {item.right}
+                    </View>
+                  )}
+                </TouchableOpacity>
+              )}
+            />
+            <TouchableOpacity
+              style={SelectCSS.closeButton}
+              onPress={() => setModalVisible(false)}
+            >
+              <Text style={SelectCSS.closeButtonText}>Close</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
 
 export default DomainSelect;

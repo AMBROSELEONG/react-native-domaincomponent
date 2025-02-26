@@ -3,12 +3,10 @@ import { Switch } from 'react-native';
 import type { DomainSwitchButtonProps } from './SwitchButtonProps';
 
 const DomainSwitchButton: React.FC<DomainSwitchButtonProps> = ({
-    style,
-    ...restProps
+  style,
+  ...restProps
 }) => {
-    return (
-        <Switch style={[style]} {...restProps} />
-    );
+  return <Switch style={[style]} {...restProps} />;
 };
 
 export default DomainSwitchButton;

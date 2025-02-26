@@ -1,7 +1,16 @@
-import type { StyleProp, ViewStyle, TextInputProps, TextInputIOSProps, DimensionValue, ColorValue } from 'react-native';
-import type { ReactNode } from "react";
+import type {
+  StyleProp,
+  ViewStyle,
+  TextInputProps,
+  TextInputIOSProps,
+  DimensionValue,
+  ColorValue,
+} from 'react-native';
+import type { ReactNode } from 'react';
 
-export interface DomainTextInputProps extends TextInputProps, TextInputIOSProps {
+export interface DomainTextInputProps
+  extends TextInputProps,
+    TextInputIOSProps {
   style?: StyleProp<ViewStyle>;
   width?: number;
   editable?: boolean;

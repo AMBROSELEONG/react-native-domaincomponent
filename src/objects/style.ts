@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const TextInputCSS = StyleSheet.create({
   container: {
@@ -30,7 +30,7 @@ export const TextInputCSS = StyleSheet.create({
   helperText: {
     marginLeft: 10,
     fontSize: 14,
-  }
+  },
 });
 
 export const ActivityIndicatorCSS = StyleSheet.create({
@@ -40,11 +40,11 @@ export const ActivityIndicatorCSS = StyleSheet.create({
     alignItems: 'center',
     height: Dimensions.get('screen').height * 0.5,
   },
-})
+});
 
 export const SelectCSS = StyleSheet.create({
   container: {
-    width: "100%",
+    width: '100%',
     borderWidth: 1.5,
     borderColor: '#000',
     borderRadius: 8,
@@ -62,8 +62,8 @@ export const SelectCSS = StyleSheet.create({
     fontSize: 14,
   },
   selectWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     flex: 1,
   },
   selector: {
@@ -79,22 +79,22 @@ export const SelectCSS = StyleSheet.create({
     marginRight: 10,
     paddingVertical: 8,
     paddingHorizontal: 12,
-    backgroundColor: "#ff4d4d",
+    backgroundColor: '#ff4d4d',
     borderRadius: 5,
   },
   resetButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
+    color: '#fff',
+    fontWeight: 'bold',
   },
   modalContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.5)",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   modalContent: {
-    width: "80%",
-    backgroundColor: "#fff",
+    width: '80%',
+    backgroundColor: '#fff',
     borderRadius: 10,
     padding: 20,
     maxHeight: Dimensions.get('screen').height / 2,
@@ -105,40 +105,40 @@ export const SelectCSS = StyleSheet.create({
     fontWeight: 'bold',
   },
   option: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingVertical: 10,
   },
   selectedContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     flex: 1,
   },
   sideContainer: {
     minWidth: 30,
-    alignItems: "center",
+    alignItems: 'center',
   },
   optionText: {
     flex: 1,
     fontSize: 16,
-    textAlign: "left",
+    textAlign: 'left',
   },
   closeButton: {
     marginTop: 10,
     padding: 10,
-    backgroundColor: "#ff4d4d",
+    backgroundColor: '#ff4d4d',
     borderRadius: 5,
-    alignItems: "center",
+    alignItems: 'center',
   },
   closeButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
+    color: '#fff',
+    fontWeight: 'bold',
   },
-})
+});
 
 export const MainContainer = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 20,
-  }
-})
+  },
+});

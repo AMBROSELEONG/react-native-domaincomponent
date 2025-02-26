@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ActivityIndicator} from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { ActivityIndicatorCSS } from '../../objects/style';
 
 const DomainLoading: React.FC<{ loading: boolean }> = ({ loading }) => {
@@ -12,4 +12,4 @@ const DomainLoading: React.FC<{ loading: boolean }> = ({ loading }) => {
   );
 };
 
-export default DomainLoading ;
+export default DomainLoading;

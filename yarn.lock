@@ -5757,7 +5757,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"domaincomponent@workspace:., domaincomponent@workspace:^":
+"domaincomponent@^0.2.0, domaincomponent@workspace:., domaincomponent@workspace:^":
   version: 0.0.0-use.local
   resolution: "domaincomponent@workspace:."
   dependencies:
@@ -5918,6 +5918,7 @@ __metadata:
     diff-sequences: ^29.6.3
     dir-glob: ^3.0.1
     doctrine: ^3.0.0
+    domaincomponent: ^0.2.0
     dot-prop: ^5.3.0
     dunder-proto: ^1.0.1
     ee-first: ^1.1.1

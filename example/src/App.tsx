@@ -1,21 +1,30 @@
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { DomainTextInput, DomainSwitchButton, DomainSelect, DomainLoading } from 'domaincomponent';
+import {
+  DomainTextInput,
+  DomainSwitchButton,
+  DomainSelect,
+  DomainLoading,
+} from 'domaincomponent';
 import { useEffect, useState } from 'react';
 
 export default function App() {
   const [text, setText] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const [loading, setLoading] = useState(false);
-  let haveerror = "";
+  let haveerror = '';
   if (text) {
-    haveerror = "The user name have been used";
+    haveerror = 'The user name have been used';
   } else {
-    haveerror = "";
+    haveerror = '';
   }
   const [options, setOptions] = useState([]);
-  const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(
+    undefined
+  );
 
-  const [selectedPhoneValue, setSelectedPhoneValue] = useState<string | undefined>(undefined);
+  const [selectedPhoneValue, setSelectedPhoneValue] = useState<
+    string | undefined
+  >(undefined);
   const phoneOptions = [
     {
       id: '+60',
@@ -37,53 +46,59 @@ export default function App() {
     const fetchCountries = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://192.168.0.184:5285/api/Country", {
+        const response = await fetch('http://192.168.0.184:5285/api/Country', {
           method: 'GET',
         });
         const data = await response.json();
         const countryOptions = data.map((country: any) => ({
           id: country.id,
           name: country.name,
-          left: <Image source={{ uri: country.flag }} style={{ width: 20, height: 20 }} />,
-          right: <Text>{country.code}</Text>
+          left: (
+            <Image
+              source={{ uri: country.flag }}
+              style={{ width: 20, height: 20 }}
+            />
+          ),
+          right: <Text>{country.code}</Text>,
         }));
         setOptions(countryOptions);
       } catch (error) {
-        console.error("Error fetching countries:", error);
+        console.error('Error fetching countries:', error);
       } finally {
         setLoading(false);
       }
-    }
+    };
     fetchCountries();
   }, []);
 
-
   if (loading) {
-    <DomainLoading loading={loading} />
+    <DomainLoading loading={loading} />;
   }
 
   return (
-
     <View style={styles.container}>
-
       <Text>Result: {selectedPhoneValue + phone}</Text>
       <DomainTextInput
-        label='User Name'
+        label="User Name"
         name="username"
-        nextName='password'
+        nextName="password"
         placeholder="Username"
         helperText={haveerror}
-        left={<TouchableOpacity onPress={() => console.log('test')}><Text>test</Text></TouchableOpacity>}
+        left={
+          <TouchableOpacity onPress={() => console.log('test')}>
+            <Text>test</Text>
+          </TouchableOpacity>
+        }
       />
       <View style={{ marginVertical: 20 }}>
         <DomainTextInput
-          name='password'
-          label='Password'
+          name="password"
+          label="Password"
           placeholder="Password"
           value={text}
           onChangeText={setText}
           focusColor="#7174F8"
-          keyboardType='numeric'
+          keyboardType="numeric"
           right={<Text>@gmail.com</Text>}
           rightWidth={'30%'}
         />
@@ -101,25 +116,27 @@ export default function App() {
         value={selectedValue}
         onChange={setSelectedValue}
         placeholder="Select a country"
-        label='Country'
+        label="Country"
         resetButton={true}
       />
       <View style={{ marginVertical: 20 }}>
         <DomainTextInput
-          label='Phone Number'
+          label="Phone Number"
           name="phone"
           placeholder="phone"
           leftWidth={50}
-          keyboardType='phone-pad'
+          keyboardType="phone-pad"
           value={phone}
           onChangeText={setPhone}
-          left={<DomainSelect
-            options={phoneOptions}
-            value={selectedPhoneValue}
-            onChange={setSelectedPhoneValue}
-            placeholder=''
-            style={{ borderWidth: 0 }}
-          />}
+          left={
+            <DomainSelect
+              options={phoneOptions}
+              value={selectedPhoneValue}
+              onChange={setSelectedPhoneValue}
+              placeholder=""
+              style={{ borderWidth: 0 }}
+            />
+          }
         />
       </View>
     </View>
