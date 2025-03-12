@@ -1,11 +1,19 @@
 import { MainContainer } from '../../objects/style';
 import type { DomainMainContainerProps } from './MainContainerProps';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, KeyboardAvoidingView, Platform } from 'react-native';
 
 const DomainMainContainer: React.FC<DomainMainContainerProps> = ({
   children,
+  keyboardAvoidingEnabled = false,
 }) => {
-  return (
+  return keyboardAvoidingEnabled ? (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={MainContainer.container}
+    >
+      <SafeAreaView>{children}</SafeAreaView>
+    </KeyboardAvoidingView>
+  ) : (
     <SafeAreaView style={MainContainer.container}>{children}</SafeAreaView>
   );
 };
