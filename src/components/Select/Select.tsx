@@ -2,6 +2,7 @@ import type { DomainSelectProps } from './SelectProps';
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, FlatList, Modal } from 'react-native';
 import { SelectCSS } from '../../objects/style';
+import DomainTextInput from '../TextInput/TextInput';
 
 const DomainSelect: React.FC<DomainSelectProps> = ({
   label,
@@ -11,17 +12,24 @@ const DomainSelect: React.FC<DomainSelectProps> = ({
   onChange,
   placeholder,
   resetButton = false,
+  search = true,
 }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelect = (id: string) => {
     onChange?.(id);
     setModalVisible(false);
+    setSearchQuery('');
   };
 
   const handleReset = () => {
     onChange?.(undefined);
   };
+
+  const filteredOptions = options.filter((opt) =>
+    opt.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const selectedOption = options.find((opt) => opt.id === value);
 
@@ -67,8 +75,18 @@ const DomainSelect: React.FC<DomainSelectProps> = ({
         <View style={SelectCSS.modalContainer}>
           <View style={SelectCSS.modalContent}>
             {label && <Text style={SelectCSS.title}>{label}</Text>}
+            {search &&
+              <View style={SelectCSS.searchContainer}>
+                <DomainTextInput
+                  name='Search'
+                  placeholder='Search'
+                  value={searchQuery}
+                  onChangeText={setSearchQuery}
+                />
+              </View>
+            }
             <FlatList
-              data={options}
+              data={filteredOptions}
               keyExtractor={(item) => item.id}
               scrollEnabled
               showsVerticalScrollIndicator={false}

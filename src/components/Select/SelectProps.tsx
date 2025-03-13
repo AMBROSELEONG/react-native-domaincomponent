@@ -10,6 +10,7 @@ export interface Option {
 
 export interface DomainSelectProps {
   style?: StyleProp<ViewStyle>;
+  search?: boolean;
   options: Option[];
   value?: string;
   onChange?: (value: string | undefined) => void;

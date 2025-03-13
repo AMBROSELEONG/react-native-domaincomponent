@@ -103,6 +103,12 @@ export const SelectCSS = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     fontWeight: 'bold',
+    marginBottom: '5%',
+  },
+  searchContainer: {
+    width: '100%',
+    height: '10%',
+    marginBottom: '10%'
   },
   option: {
     flexDirection: 'row',

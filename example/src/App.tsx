@@ -46,7 +46,7 @@ export default function App() {
     const fetchCountries = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://192.168.0.184:5285/api/Country', {
+        const response = await fetch('http://192.168.0.172:5285/api/Country', {
           method: 'GET',
         });
         const data = await response.json();
