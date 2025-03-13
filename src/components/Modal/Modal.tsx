@@ -1,12 +1,6 @@
 import React from 'react';
 import {
     Modal,
-    View,
-    Text,
-    TouchableOpacity,
-    KeyboardAvoidingView,
-    Platform,
-    StyleSheet,
 } from 'react-native';
 import type { DomainModalProps } from './ModalProps';
 
@@ -57,3 +51,5 @@ const DomainModal: React.FC<DomainModalProps> = ({
         </Modal>
     )
 }
+
+export default DomainModal;
