@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
-    "types": ["node"]
+    "types": ["node"],
+    "noImplicitAny": false
   }
 }

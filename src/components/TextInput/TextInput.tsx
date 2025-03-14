@@ -26,6 +26,8 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(
       rightWidth,
       helperText,
       label,
+      labelColor = '#000',
+      labelBackground = '#fff',
       helperTextColor = 'red',
       inputColor,
       ...restProps
@@ -57,11 +59,11 @@ const DomainTextInput = forwardRef<TextInput, DomainTextInputProps>(
     return (
       <View style={{ width: '100%' }}>
         {label && (
-          <View style={[TextInputCSS.labelView]}>
+          <View style={[TextInputCSS.labelView, {backgroundColor: labelBackground}]}>
             <Text
               style={[
                 TextInputCSS.label,
-                { color: isFocused ? focusColor : '#000' },
+                { color: isFocused ? focusColor : labelColor },
               ]}
             >
               {label}

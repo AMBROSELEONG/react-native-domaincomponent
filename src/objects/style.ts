@@ -110,6 +110,10 @@ export const SelectCSS = StyleSheet.create({
     height: '10%',
     marginBottom: '10%'
   },
+  searchInput: {
+    borderWidth: 1,
+    maxHeight: 40,
+  },
   option: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -140,6 +144,10 @@ export const SelectCSS = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
+  helperText: {
+    marginLeft: 10,
+    fontSize: 14,
+  },
 });
 
 export const MainContainer = StyleSheet.create({
@@ -148,3 +156,40 @@ export const MainContainer = StyleSheet.create({
     paddingTop: 20,
   },
 });
+
+export const ModalCSS = StyleSheet.create({
+  backdrop: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modalContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  closeButton: {
+    position: 'absolute',
+    right: 15,
+    top: 15,
+    zIndex: 10,
+  },
+  closeText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  content: {
+    marginTop: 10,
+  },
+})

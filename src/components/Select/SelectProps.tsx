@@ -1,4 +1,4 @@
-import type { StyleProp, ViewStyle } from 'react-native';
+import type { StyleProp, ViewStyle, ColorValue } from 'react-native';
 import React from 'react';
 
 export interface Option {
@@ -17,4 +17,6 @@ export interface DomainSelectProps {
   placeholder?: string;
   label?: string;
   resetButton?: boolean;
+  helperText?: string;
+  helperTextColor?: ColorValue;
 }

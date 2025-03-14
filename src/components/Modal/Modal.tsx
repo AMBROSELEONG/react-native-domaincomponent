@@ -1,8 +1,14 @@
 import React from 'react';
 import {
     Modal,
+    View,
+    TouchableWithoutFeedback,
+    Text,
+    StyleSheet,
+    TouchableOpacity
 } from 'react-native';
 import type { DomainModalProps } from './ModalProps';
+import { ModalCSS } from '../../objects/style';
 
 const DomainModal: React.FC<DomainModalProps> = ({
     openModal = false,
@@ -10,14 +16,12 @@ const DomainModal: React.FC<DomainModalProps> = ({
     onOpen,
     animationType = 'slide',
     transparent = true,
-    position = 'center',
-    modalHeight = 'auto',
-    modalWidth = '80%',
+    modalHeight,
+    modalWidth,
     backdropOpacity = 0.5,
     closeOnHardwareBackPress = true,
     disableBackdropPress = false,
     showCloseIcon = true,
-    closeButton = true,
     keyboardAvoiding = false,
     title,
     header,
@@ -48,8 +52,34 @@ const DomainModal: React.FC<DomainModalProps> = ({
             }}
             {...modalProps}
         >
+            <TouchableWithoutFeedback
+                onPress={() => {
+                    if (!disableBackdropPress && onClose) {
+                        onClose();
+                    }
+                }}
+            >
+                <View style={[ModalCSS.backdrop, { backgroundColor: `rgba(0,0,0,${backdropOpacity})` }, backdropStyle]}>
+                    <View style={[ModalCSS.modalContainer, style, { width: modalWidth ?? '80%', height: modalHeight}]}>
+                        {showCloseIcon && (
+                            <TouchableOpacity style={ModalCSS.closeButton} onPress={onClose}>
+                                <Text style={ModalCSS.closeText}>×</Text>
+                            </TouchableOpacity>
+                        )}
+                        {title && <Text style={[ModalCSS.title, titleStyle]}>{title}</Text>}
+                        {header}
+                        <View style={[ModalCSS.content, contentStyle]}>
+                            {children}
+                        </View>
+                        {footer}
+                    </View>
+                </View>
+            </TouchableWithoutFeedback>
         </Modal>
     )
 }
 
+const styles = StyleSheet.create({
+   
+});
 export default DomainModal;

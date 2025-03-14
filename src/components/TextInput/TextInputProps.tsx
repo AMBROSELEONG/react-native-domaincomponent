@@ -25,5 +25,6 @@ export interface DomainTextInputProps
   helperTextColor?: ColorValue;
   label?: string;
   labelColor?: ColorValue;
+  labelBackground?: ColorValue;
   inputColor?: ColorValue;
 }

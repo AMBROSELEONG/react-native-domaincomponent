@@ -3,3 +3,4 @@ export { default as DomainLoading } from './components/ActivityIndicator/Activit
 export { default as DomainSwitchButton } from './components/SwitchButton/SwitchButton';
 export { default as DomainSelect } from './components/Select/Select';
 export { default as DomainMainContainer } from './components/MainContainer/MainContainer';
+export { default as DomainModal } from './components/Modal/Modal'

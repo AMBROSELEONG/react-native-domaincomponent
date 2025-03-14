@@ -4,7 +4,6 @@ export interface DomainModalProps extends ModalProps {
     openModal?: boolean; 
     onClose?: () => void;
     onOpen?: () => void;  
-    closeButton?: boolean; 
     disableBackdropPress?: boolean; 
     closeOnHardwareBackPress?: boolean;
     
@@ -13,9 +12,8 @@ export interface DomainModalProps extends ModalProps {
     contentStyle?: StyleProp<ViewStyle>;
     titleStyle?: StyleProp<TextStyle>;
 
-    modalHeight?: number | string;
-    modalWidth?: number | string;
-    position?: 'center' | 'top' | 'bottom';
+    modalHeight?: number | `${number}%`;
+    modalWidth?: number | `${number}%`;
     backdropOpacity?: number;
 
     title: string;
