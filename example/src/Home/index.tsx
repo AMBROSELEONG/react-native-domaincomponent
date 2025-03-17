@@ -25,6 +25,9 @@ const Home = () => {
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainRadio' as never)}>
                     <Text style={style.text}>Domain Radio</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainSlider' as never)}>
+                    <Text style={style.text}>Domain Slider</Text>
+                </TouchableOpacity>
             </View>
         </DomainMainContainer>
     )

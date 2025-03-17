@@ -225,3 +225,22 @@ export const RadioButtonCSS = StyleSheet.create({
     color: "#000",
   },
 })
+
+export const SliderCSS = StyleSheet.create({
+  container: { 
+    padding: 20 
+  },
+  track: { 
+    width: 300, 
+    height: 4, 
+    backgroundColor: '#ddd', 
+    borderRadius: 2, 
+    marginTop: 10 
+  },
+  thumb: { 
+    width: 20, 
+    height: 20, 
+    borderRadius: 10, 
+    position: 'absolute', 
+    top: -8 },
+})

@@ -75,6 +75,7 @@ const DomainSelectExample = () => {
                             label="Country"
                             resetButton={true}
                             helperText='Cannot empty'
+                            labelBackground='#f0f0f0'
                         />
                     </View>
 
@@ -88,6 +89,7 @@ const DomainSelectExample = () => {
                             value={phone}
                             onChangeText={setPhone}
                             dataDetectorTypes='phoneNumber'
+                            labelBackground='#f0f0f0'
                             left={
                                 <DomainSelect
                                     options={phoneOptions}

@@ -16,6 +16,8 @@ export interface DomainSelectProps {
   onChange?: (value: string | undefined) => void;
   placeholder?: string;
   label?: string;
+  labelColor?: ColorValue;
+  labelBackground?: ColorValue;
   resetButton?: boolean;
   helperText?: string;
   helperTextColor?: ColorValue;

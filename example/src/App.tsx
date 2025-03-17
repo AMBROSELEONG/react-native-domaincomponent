@@ -7,6 +7,7 @@ import DomainLoading from './DomainLoading';
 import DomainModal from './DomainModal';
 import DomainCheckbox from './DomainCheckbox';
 import DomainRadio from './DomainRadio';
+import DomainSlider from './DomainSlider';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="DomainModal" component={DomainModal} options={{ title: 'DomainModal' }} />
         <Stack.Screen name="DomainCheckbox" component={DomainCheckbox} options={{ title: 'DomainCheckbox' }} />
         <Stack.Screen name="DomainRadio" component={DomainRadio} options={{ title: 'DomainRadio' }} />
+        <Stack.Screen name="DomainSlider" component={DomainSlider} options={{ title: 'DomainSlider' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

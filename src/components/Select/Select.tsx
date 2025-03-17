@@ -6,6 +6,8 @@ import DomainTextInput from '../TextInput/TextInput';
 
 const DomainSelect: React.FC<DomainSelectProps> = ({
   label,
+  labelColor,
+  labelBackground = "#fff",
   style,
   options,
   value,
@@ -39,8 +41,8 @@ const DomainSelect: React.FC<DomainSelectProps> = ({
     <View>
       <View style={[SelectCSS.container, style]}>
         {label && (
-          <View style={SelectCSS.labelView}>
-            <Text style={SelectCSS.label}>{label}</Text>
+          <View style={[SelectCSS.labelView, { backgroundColor: labelBackground }]}>
+            <Text style={[SelectCSS.label, { color: labelColor }]}>{label}</Text>
           </View>
         )}
 

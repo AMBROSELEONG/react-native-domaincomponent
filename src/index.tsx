@@ -5,5 +5,5 @@ export { default as DomainSelect } from './components/Select/Select';
 export { default as DomainMainContainer } from './components/MainContainer/MainContainer';
 export { default as DomainModal } from './components/Modal/Modal';
 export { default as DomainCheckbox } from './components/Checkbox/Checkbox';
-export { default as DomainRadioButton } from './components/Radio/RadioButton';
 export { default as DomainRadioGroup } from './components/Radio/RadioGroup';
+export { default as DomainSlider } from './components/Slider/Slider';
