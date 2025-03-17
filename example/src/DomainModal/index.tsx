@@ -10,10 +10,13 @@ const DomainModalExample = () => {
                 openModal={openModal}
                 onClose={() => setOpenModal(false)}
                 showCloseIcon={true}
-                disableBackdropPress={true}
+                disableBackdropPress={false}
                 animationType='fade'
-                modalWidth={'90%'}>
-                <View><Text>Hello World</Text></View>
+                modalWidth={'90%'}
+                footer={<Button title="Close" onPress={() => setOpenModal(false)}></Button>}>
+                <View>
+                    <Text>Hello World</Text>
+                </View>
             </DomainModal>
         </DomainMainContainer>
     )

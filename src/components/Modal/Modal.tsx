@@ -4,7 +4,6 @@ import {
     View,
     TouchableWithoutFeedback,
     Text,
-    StyleSheet,
     TouchableOpacity
 } from 'react-native';
 import type { DomainModalProps } from './ModalProps';
@@ -79,7 +78,4 @@ const DomainModal: React.FC<DomainModalProps> = ({
     )
 }
 
-const styles = StyleSheet.create({
-   
-});
 export default DomainModal;
