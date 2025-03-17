@@ -48,7 +48,8 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "form component"
   ],
   "repository": {
     "type": "git",

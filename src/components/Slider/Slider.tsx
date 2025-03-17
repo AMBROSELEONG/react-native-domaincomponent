@@ -1,6 +1,6 @@
 import type { DomainSliderProps } from "./SliderProps";
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, PanResponder } from 'react-native';
+import { View, Text, PanResponder } from 'react-native';
 import { SliderCSS } from "../../objects/style";
 
 const DomainSlider: React.FC<DomainSliderProps> = ({
