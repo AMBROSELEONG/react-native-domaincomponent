@@ -8,16 +8,22 @@ const Home = () => {
         <DomainMainContainer>
             <View>
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainTextInput' as never)}>
-                    <Text style={style.text}>TextInput</Text>
-                </TouchableOpacity>
+                    <Text style={style.text}>Domain TextInput</Text>
+                </TouchableOpacity> 
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainSelect' as never)}>
-                    <Text style={style.text}>Select</Text>
+                    <Text style={style.text}>Domain Select</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainLoading' as never)}>
                     <Text style={style.text}>Domain Loading</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainModal' as never)}>
                     <Text style={style.text}>Domain Modal</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainCheckbox' as never)}>
+                    <Text style={style.text}>Domain Checkbox</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainRadio' as never)}>
+                    <Text style={style.text}>Domain Radio</Text>
                 </TouchableOpacity>
             </View>
         </DomainMainContainer>

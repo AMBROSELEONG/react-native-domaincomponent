@@ -3,4 +3,7 @@ export { default as DomainLoading } from './components/ActivityIndicator/Activit
 export { default as DomainSwitchButton } from './components/SwitchButton/SwitchButton';
 export { default as DomainSelect } from './components/Select/Select';
 export { default as DomainMainContainer } from './components/MainContainer/MainContainer';
-export { default as DomainModal } from './components/Modal/Modal'
+export { default as DomainModal } from './components/Modal/Modal';
+export { default as DomainCheckbox } from './components/Checkbox/Checkbox';
+export { default as DomainRadioButton } from './components/Radio/RadioButton';
+export { default as DomainRadioGroup } from './components/Radio/RadioGroup';

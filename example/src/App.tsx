@@ -5,6 +5,8 @@ import DomainTextInput from './DomainTextInput';
 import DomainSelect from './DomainSelectBox';
 import DomainLoading from './DomainLoading';
 import DomainModal from './DomainModal';
+import DomainCheckbox from './DomainCheckbox';
+import DomainRadio from './DomainRadio';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +19,8 @@ const App = () => {
         <Stack.Screen name="DomainSelect" component={DomainSelect} options={{ title: 'DomainSelect' }} />
         <Stack.Screen name="DomainLoading" component={DomainLoading} options={{ title: 'DomainLoading' }} />
         <Stack.Screen name="DomainModal" component={DomainModal} options={{ title: 'DomainModal' }} />
+        <Stack.Screen name="DomainCheckbox" component={DomainCheckbox} options={{ title: 'DomainCheckbox' }} />
+        <Stack.Screen name="DomainRadio" component={DomainRadio} options={{ title: 'DomainRadio' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

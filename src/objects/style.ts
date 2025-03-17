@@ -193,3 +193,35 @@ export const ModalCSS = StyleSheet.create({
     marginTop: 10,
   },
 })
+
+export const CheckboxCSS = StyleSheet.create({
+  container: {
+    borderWidth: 2,
+    borderRadius: 4,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+})
+
+export const RadioButtonCSS = StyleSheet.create({
+  radio: {
+    borderWidth: 2,
+    borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  radioInner: {
+    borderRadius: 50,
+  },
+  option: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 5,
+    marginHorizontal: 5,
+  },
+  optionText: {
+    marginLeft: 10,
+    fontSize: 16,
+    color: "#000",
+  },
+})
