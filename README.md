@@ -82,6 +82,8 @@ export default App;
 | `onChange`   | `(value: string \| undefined) => void` | ❌ No    | Callback function triggered when an option is selected.    |
 | `placeholder`| `string`                        | ❌ No    | Placeholder text displayed when no option is selected.     |
 | `label`      | `string`                        | ❌ No    | Label for the select input.                                |
+| `labelColor`      | `ColorValue`                     | ❌ No    | Color of the label text.                                 |
+| `labelBackground` | `ColorValue`                     | ❌ No    | Background Color of the label text.                      |
 | `resetButton`| `boolean`                       | ❌ No    | Displays a reset button to clear selection if `true`.     |
 | `helperText`      | `string`                         | ❌ No    | Text displayed below the input for guidance.            |
 | `helperTextColor` | `ColorValue`                     | ❌ No    | Color of the helper text.                                |
@@ -272,6 +274,147 @@ const DomainModalExample = () => {
 
 export default DomainModalExample;
 ```
+
+# DomainCheckbox
+
+## Description
+`DomainCheckbox` is a customizable checkbox component for React Native that allows users to select or deselect an option. It uses `react-native-vector-icons/MaterialIcons` for the check icon and supports size and color customization.
+
+![image](https://github.com/user-attachments/assets/02163f98-a4ea-42d0-9c57-3620f739fc12)
+
+## Props Table
+
+| Props      | Type                      | Required | Description                                         |
+|-----------|--------------------------|----------|-----------------------------------------------------|
+| `checked`  | `boolean`                 | ✅ Yes   | Determines if the checkbox is checked or not.      |
+| `onChange` | `(checked: boolean) => void` | ✅ Yes   | Callback function triggered when the checkbox state changes. |
+| `size`     | `number`                   | ❌ No    | Sets the size of the checkbox (default: `24`).     |
+| `color`    | `string`                   | ❌ No    | Sets the color of the checkbox (default: `#6200EE`). |
+
+## Example Usage
+
+```tsx
+import { DomainCheckbox } from "domaincomponent";
+import { View, Text } from 'react-native';
+import { useState } from "react";
+
+const DomainCheckboxExample = () => {
+    const [isChecked, setIsChecked] = useState(false);
+
+    return (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <View style={{ flexDirection: "row", alignItems: 'center' }}>
+                <DomainCheckbox checked={isChecked} onChange={setIsChecked} color="blue" size={30} />
+                <Text>Option</Text>
+            </View>
+            <Text>{isChecked ? "Selected" : "Not Selected"}</Text>
+        </View>
+    );
+}
+
+export default DomainCheckboxExample;
+```
+
+# DomainRadioGroup Component
+
+## Description
+`DomainRadioGroup` is a React Native component that allows users to select a single option from a group of radio buttons. It supports custom styling, sizes, and colors.
+
+![image](https://github.com/user-attachments/assets/9b1c4373-709a-417e-9b12-dfe6dcce8599)
+
+## Props Table
+
+| Props          | Type                    | Required | Description                                              |
+| ------------- | ----------------------- | -------- | -------------------------------------------------------- |
+| `options`     | `string[]`               | ✅ Yes   | Array of options to display as radio buttons.            |
+| `selectedIndex` | `number`               | ✅ Yes   | The index of the currently selected radio button.       |
+| `onSelect`    | `(index: number) => void` | ✅ Yes   | Callback function called when a radio button is selected. |
+| `size`        | `number`                 | ❌ No    | Size of the radio button. Defaults to `20`.             |
+| `color`       | `string`                 | ❌ No    | Color of the selected radio button. Defaults to `black`. |
+| `labelStyle`  | `object`                 | ❌ No    | Custom styles for the radio button label text.          |
+| `style`       | `StyleProp<ViewStyle>`   | ❌ No    | Custom styles for the radio group container.            |
+
+## Example Usage
+
+```tsx
+import { DomainRadioGroup } from "domaincomponent";
+import { useState } from "react";
+import { View, Text } from "react-native";
+
+const DomainRadioExample = () => {
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    const options = ["Male", "Female", "Other"];
+
+    return (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <DomainRadioGroup
+                options={options}
+                selectedIndex={selectedIndex}
+                onSelect={setSelectedIndex}
+                color="black"
+                size={20}
+                labelStyle={{ fontSize: 18 }}
+            />
+            <Text>Selected: {options[selectedIndex]}</Text>
+        </View>
+    )
+}
+
+export default DomainRadioExample;
+```
+
+# DomainSlider Component
+
+## Description
+The `DomainSlider` component is a customizable slider that allows users to select a value within a specified range. It supports touch-based interaction and dynamic value updates.
+
+![image](https://github.com/user-attachments/assets/3b5f570b-71ad-443f-88e7-ba6a0816b3bb)
+
+## Props
+| Prop Name       | Type          | Default | Description |
+|----------------|--------------|---------|-------------|
+| `min`          | `number`      | `0`     | The minimum selectable value. |
+| `max`          | `number`      | `100`   | The maximum selectable value. |
+| `step`         | `number`      | `1`     | The increment between values. |
+| `onValueChange` | `(value: number) => void` | `undefined` | Callback function triggered when the value changes. |
+| `color`        | `ColorValue`  | `blue`  | The color of the slider thumb. |
+
+## Example Usage
+```tsx
+import { DomainSlider } from 'domaincomponent';
+import { useState } from 'react';
+import { View, Text } from 'react-native';
+
+const DomainSliderExample = () => {
+    const [sliderValue, setSliderValue] = useState(0);
+
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <DomainSlider min={0} max={200} step={4} onValueChange={setSliderValue} color="#ff0000"/>
+            <Text>{sliderValue}</Text>
+        </View>
+    );
+}
+
+export default DomainSliderExample;
+```
+
+## Features
+- Supports custom min/max values.
+- Adjustable step size.
+- Customizable slider thumb color.
+- Real-time value updates.
+- Smooth touch-based interaction.
+
+## Notes
+- Ensure the `step` value is appropriate for the range to avoid unexpected behavior.
+- The slider width is currently fixed at `300` pixels.
+- Can be enhanced with additional styling and animations.
+
+---
+This component is useful for applications that require user input within a numerical range, such as volume control, brightness adjustment, or financial calculations.
+
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
