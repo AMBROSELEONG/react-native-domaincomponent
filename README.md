@@ -216,6 +216,7 @@ export default MyScreen;
 
 ## Description
 `DomainModal` is a customizable modal component for React Native applications. It provides various options such as backdrop control, hardware back press handling, custom styling, and optional header and footer components.
+
 ![image](https://github.com/user-attachments/assets/8e75cb01-e931-4f9a-a88e-55d7ad1dda0a)
 
 ## Props Table
