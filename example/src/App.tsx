@@ -8,6 +8,8 @@ import DomainModal from './DomainModal';
 import DomainCheckbox from './DomainCheckbox';
 import DomainRadio from './DomainRadio';
 import DomainSlider from './DomainSlider';
+import DomainHelperText from './DomainHelperText';
+import DomainDropdownMenu from './DomainDropdownMenu';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +25,8 @@ const App = () => {
         <Stack.Screen name="DomainCheckbox" component={DomainCheckbox} options={{ title: 'DomainCheckbox' }} />
         <Stack.Screen name="DomainRadio" component={DomainRadio} options={{ title: 'DomainRadio' }} />
         <Stack.Screen name="DomainSlider" component={DomainSlider} options={{ title: 'DomainSlider' }} />
+        <Stack.Screen name="DomainHelperText" component={DomainHelperText} options={{ title: 'DomainHelperText' }} />
+        <Stack.Screen name="DomainDropdownMenu" component={DomainDropdownMenu} options={{ title: 'DomainDropdownMenu' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

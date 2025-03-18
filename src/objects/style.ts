@@ -227,20 +227,64 @@ export const RadioButtonCSS = StyleSheet.create({
 })
 
 export const SliderCSS = StyleSheet.create({
-  container: { 
-    padding: 20 
+  container: {
+    padding: 20
   },
-  track: { 
-    width: 300, 
-    height: 4, 
-    backgroundColor: '#ddd', 
-    borderRadius: 2, 
-    marginTop: 10 
+  track: {
+    width: 300,
+    height: 4,
+    backgroundColor: '#ddd',
+    borderRadius: 2,
+    marginTop: 10
   },
-  thumb: { 
-    width: 20, 
-    height: 20, 
-    borderRadius: 10, 
+  thumb: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    position: 'absolute',
+    top: -8
+  },
+})
+
+export const HelperTextCSS = StyleSheet.create({
+  container: {
+    marginTop: 5,
+  },
+  text: {
+    fontSize: 14,
+  },
+})
+
+export const DropdownMenuCSS = StyleSheet.create({
+  button: {
+    width: 200,
+    padding: 12,
+    backgroundColor: '#f0f0f0',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+  },
+  text: {
+    fontSize: 16
+  },
+  dropdown: {
+    width: 200,
+    marginTop: 5,
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    maxHeight: 150,
+    elevation: 3,
     position: 'absolute', 
-    top: -8 },
+    top: '100%', 
+    left: 0, 
+    zIndex: 100
+  },
+  option: {
+    padding: 12
+  },
+  optionText: {
+    fontSize: 16
+  },
 })

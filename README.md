@@ -12,7 +12,8 @@ npm install domaincomponent
 `DomainTextInput` is a customizable text input component that extends `TextInputProps` and `TextInputIOSProps`, providing additional styling and configuration options.
 
 ![image](https://github.com/user-attachments/assets/d5ab91ef-33b2-4c84-8199-c70f5ade06bc)
-## Props
+
+## Props Table
 
 | Props              | Type                              | Required | Description                                               |
 | ------------------ | -------------------------------- | -------- | --------------------------------------------------------- |
@@ -72,7 +73,7 @@ export default App;
 
 <img src="https://github.com/user-attachments/assets/96bc67c1-0e34-439f-be0b-0abf20ecaca9" style="width:300px; height:auto;">
 
-## Props
+## Props Table
 
 | Props         | Type                            | Required | Description                                                 |
 | ------------ | ------------------------------ | -------- | ----------------------------------------------------------- |
@@ -371,14 +372,14 @@ The `DomainSlider` component is a customizable slider that allows users to selec
 
 ![image](https://github.com/user-attachments/assets/3b5f570b-71ad-443f-88e7-ba6a0816b3bb)
 
-## Props
-| Prop Name       | Type          | Default | Description |
+## Props Table
+| Prop Name       | Type          | Required | Description |
 |----------------|--------------|---------|-------------|
-| `min`          | `number`      | `0`     | The minimum selectable value. |
-| `max`          | `number`      | `100`   | The maximum selectable value. |
-| `step`         | `number`      | `1`     | The increment between values. |
-| `onValueChange` | `(value: number) => void` | `undefined` | Callback function triggered when the value changes. |
-| `color`        | `ColorValue`  | `blue`  | The color of the slider thumb. |
+| `min`          | `number`      | ❌ No     | The minimum selectable value. |
+| `max`          | `number`      | ❌ No   | The maximum selectable value. |
+| `step`         | `number`      | ❌ No     | The increment between values. |
+| `onValueChange` | `(value: number) => void` | ❌ No | Callback function triggered when the value changes. |
+| `color`        | `ColorValue`  | ❌ No  | The color of the slider thumb. |
 
 ## Example Usage
 ```tsx
@@ -415,6 +416,107 @@ export default DomainSliderExample;
 ---
 This component is useful for applications that require user input within a numerical range, such as volume control, brightness adjustment, or financial calculations.
 
+# DomainHelperText Component
+
+## Description
+The `DomainHelperText` component is a reusable helper text component for React Native applications. It is designed to display validation messages or additional information below an input field.
+
+![image](https://github.com/user-attachments/assets/4805d8b3-aa69-469a-b6b4-44b9b50d2e62)
+
+## Props Table
+
+| Prop       | Type    | Required | Description |
+|------------|--------|---------|-------------|
+| `text`     | string | ✅ Yes       | The text to be displayed. |
+| `visible`  | boolean | ✅ Yes      | Controls the visibility of the helper text. |
+| `color`    | string  |  ❌ No  | Defines the color of the text. |
+
+## Usage Example
+```tsx
+import { useState } from 'react';
+import { View, Button } from 'react-native';
+import { DomainHelperText, DomainTextInput } from 'domaincomponent';
+
+const DomainHelperTextExample = () => {
+    const [input, setInput] = useState('');
+    const [showError, setShowError] = useState(false);
+
+    const handleValidation = () => {
+        setShowError(input.trim() === '');
+    };
+
+    return (
+        <View style={{ padding: 20 }}>
+            <DomainTextInput
+                name='Text'
+                placeholder="Enter text"
+                value={input}
+                onChangeText={setInput}
+                style={{ borderWidth: 1, padding: 10, borderRadius: 5 }}
+            />
+            <DomainHelperText text="This field is required!" visible={showError} color="red" />
+            <Button title="Validate" onPress={handleValidation} />
+        </View>
+    );
+};
+
+export default DomainHelperTextExample;
+```
+
+# DomainDropdownMenu
+
+## Description
+`DomainDropdownMenu` is a customizable dropdown menu component for React Native. It allows users to display a list of selectable options in a dropdown format and supports custom rendering of menu items.
+
+![image](https://github.com/user-attachments/assets/c2e60180-51e7-44d3-b8be-cf1f67e02c6c)
+
+## Props Table
+| Prop Name      | Type                                  | Required | Description |
+|---------------|-------------------------------------|---------|-------------|
+| `options`     | `string[]`                          | ✅ Yes   | Array of strings representing the dropdown menu options. |
+| `style`       | `StyleProp<ViewStyle>`              | ❌ No  | Style applied to the menu button. |
+| `children`    | `React.ReactNode`                   | ✅ Yes  | The element that triggers the dropdown when clicked. |
+| `optionsRender` | `ListRenderItem<string>`           | ❌ No  | Function to customize how menu options are rendered. |
+| `dropdownStyle` | `StyleProp<ViewStyle>`            | ❌ No  | Style applied to the dropdown container. |
+
+
+## Example Usage
+```tsx
+import { View, Text, TouchableOpacity } from 'react-native';
+import { DomainDropdownMenu } from 'domaincomponent';
+import { useState } from 'react';
+
+const DomainDropdownMenuExample = () => {
+    const options = ['Profile', 'Settings', 'Logout', 'Test', 'Exp'];
+    const [visible, setVisible] = useState(false);
+
+    const handleSelect = (item) => {
+        setVisible(false);
+        console.log(`Selected: ${item}`);
+    };
+
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <DomainDropdownMenu
+                options={options}
+                dropdownStyle={{ backgroundColor: '#fff', padding: 10, borderRadius: 5 }}
+                optionsRender={({ item }) => (
+                    <TouchableOpacity style={{ padding: 10 }} onPress={() => handleSelect(item)}>
+                        <Text style={{ fontSize: 16 }}>{item}</Text>
+                    </TouchableOpacity>
+                )}
+            >
+                <Text style={{ fontSize: 18, color: 'blue' }}>☰ Menu</Text>
+            </DomainDropdownMenu>
+        </View>
+    );
+}
+
+export default DomainDropdownMenuExample;
+```
+## Customization
+- You can pass `optionsRender` to define a custom rendering of the dropdown options.
+- The `dropdownStyle` prop allows modifying the appearance of the dropdown container.
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 

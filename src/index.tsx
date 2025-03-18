@@ -7,3 +7,5 @@ export { default as DomainModal } from './components/Modal/Modal';
 export { default as DomainCheckbox } from './components/Checkbox/Checkbox';
 export { default as DomainRadioGroup } from './components/Radio/RadioGroup';
 export { default as DomainSlider } from './components/Slider/Slider';
+export { default as DomainHelperText } from './components/HelperText/HelperText'
+export { default as DomainDropdownMenu } from './components/DropdownMenu/DropdownMenu'

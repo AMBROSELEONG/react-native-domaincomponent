@@ -28,6 +28,12 @@ const Home = () => {
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainSlider' as never)}>
                     <Text style={style.text}>Domain Slider</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainHelperText' as never)}>
+                    <Text style={style.text}>Domain Helper Text</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainDropdownMenu' as never)}>
+                    <Text style={style.text}>Domain Dropdown Menu</Text>
+                </TouchableOpacity>
             </View>
         </DomainMainContainer>
     )
