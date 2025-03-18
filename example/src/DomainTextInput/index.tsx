@@ -18,7 +18,7 @@ const DomainTextInputExample = () => {
         checkPassword(password);
     }, [password])
 
-    const checkPassword = (password) => {
+    const checkPassword = (password: string) => {
         if (!password) return false;
 
         const minLength = /.{8,}/;

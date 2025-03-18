@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 const DomainDropdownMenuExample = () => {
     const options = ['Profile', 'Settings', 'Logout', 'Test', 'Exp'];
-    const [visible, setVisible] = useState(false);
+    const [, setVisible] = useState(false);
 
-    const handleSelect = (item) => {
+    const handleSelect = (item: string) => {
         setVisible(false);
         switch (item) {
             case 'Profile':

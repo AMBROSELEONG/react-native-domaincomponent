@@ -1,6 +1,6 @@
 {
   "name": "domaincomponent",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "domain ui component",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
