@@ -9,3 +9,4 @@ export { default as DomainRadioGroup } from './components/Radio/RadioGroup';
 export { default as DomainSlider } from './components/Slider/Slider';
 export { default as DomainHelperText } from './components/HelperText/HelperText'
 export { default as DomainDropdownMenu } from './components/DropdownMenu/DropdownMenu'
+export { default as DomainHeader } from './components/Header/Header'

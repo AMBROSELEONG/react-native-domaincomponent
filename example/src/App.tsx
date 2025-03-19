@@ -10,6 +10,7 @@ import DomainRadio from './DomainRadio';
 import DomainSlider from './DomainSlider';
 import DomainHelperText from './DomainHelperText';
 import DomainDropdownMenu from './DomainDropdownMenu';
+import DomainHeader from './DomainHeader';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const App = () => {
         <Stack.Screen name="DomainSlider" component={DomainSlider} options={{ title: 'DomainSlider' }} />
         <Stack.Screen name="DomainHelperText" component={DomainHelperText} options={{ title: 'DomainHelperText' }} />
         <Stack.Screen name="DomainDropdownMenu" component={DomainDropdownMenu} options={{ title: 'DomainDropdownMenu' }} />
+        <Stack.Screen name="DomainHeader" component={DomainHeader} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

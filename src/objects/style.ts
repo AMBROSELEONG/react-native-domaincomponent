@@ -276,9 +276,9 @@ export const DropdownMenuCSS = StyleSheet.create({
     borderRadius: 5,
     maxHeight: 150,
     elevation: 3,
-    position: 'absolute', 
-    top: '100%', 
-    left: 0, 
+    position: 'absolute',
+    top: '100%',
+    left: 0,
     zIndex: 100
   },
   option: {
@@ -286,5 +286,33 @@ export const DropdownMenuCSS = StyleSheet.create({
   },
   optionText: {
     fontSize: 16
+  },
+})
+
+export const HeaderCSS = StyleSheet.create({
+  mainContainer: {
+    width: '100%',
+    flexDirection: 'row', 
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+},
+  headerView: {
+    height: Dimensions.get("screen").width / 6,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  },
+  headerIcon: {
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  pageName: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    flex: 1,
   },
 })

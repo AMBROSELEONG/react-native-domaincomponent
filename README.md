@@ -4,6 +4,12 @@
 npm install domaincomponent
 ```
 
+or 
+
+```sh
+yarn add domaincomponent
+```
+
 # Usage
 
 # DomainTextInput Component
@@ -431,7 +437,7 @@ The `DomainHelperText` component is a reusable helper text component for React N
 | `visible`  | boolean | ✅ Yes      | Controls the visibility of the helper text. |
 | `color`    | string  |  ❌ No  | Defines the color of the text. |
 
-## Usage Example
+## Example Usage 
 ```tsx
 import { useState } from 'react';
 import { View, Button } from 'react-native';
@@ -519,6 +525,57 @@ export default DomainDropdownMenuExample;
 - The `dropdownStyle` prop allows modifying the appearance of the dropdown container.
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+# DomainHeader Component
+
+## Description
+The `DomainHeader` component is a customizable header component for React Native applications. It includes a back navigation button, a title, and an optional right-side component.
+
+![image](https://github.com/user-attachments/assets/f2ba152b-b959-489d-9f89-a5b64b5398df)
+
+## Props Table
+
+| Prop             | Type                 | Required | Description            |
+|-----------------|----------------------|----------|----------------------|
+| `navigation`    | `() => void`         | ❌ No       | Function to handle back navigation. |
+| `title`         | `string`             | ✅ Yes      | The title displayed in the header. |
+| `rightComponent` | `React.ReactNode`    | ❌ No       | Optional component displayed on the right side. |
+| `backgroundColor` | `ColorValue`        | ❌ No       | Background color of the header. |
+| `color`         | `ColorValue`         | ❌ No       | Text and icon color. |
+
+## Example Usage
+
+```tsx
+import { View, Text, TouchableOpacity } from 'react-native';
+import { DomainHeader } from 'domaincomponent';
+import { useNavigation } from '@react-navigation/native';
+
+const DomainHeaderExample = () => {
+    const navigation = useNavigation();
+
+    const headerRightComponent = () => {
+        return (
+            <TouchableOpacity>
+                <Text style={{ color: '#fff', fontSize: 26 }}>+</Text>
+            </TouchableOpacity>
+        );
+    };
+
+    return (
+        <View style={{ flex: 1 }}>
+            <DomainHeader
+                navigation={() => navigation.goBack()}
+                title="Header"
+                rightComponent={headerRightComponent()}
+                backgroundColor="#0000ff"
+                color="white"
+            />
+        </View>
+    );
+};
+
+export default DomainHeaderExample;
+```
 
 ## License
 
