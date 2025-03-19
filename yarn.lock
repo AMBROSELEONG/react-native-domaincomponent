@@ -7552,8 +7552,8 @@ __metadata:
     yocto-queue: ^0.1.0
     yoctocolors-cjs: ^2.1.2
   peerDependencies:
-    react: "*"
-    react-native: "*"
+    react: ">=17.0.0"
+    react-native: ">=0.65.0"
   languageName: unknown
   linkType: soft
 

@@ -40,6 +40,9 @@ const Home = () => {
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainAlert' as never)}>
                     <Text style={style.text}>Domain Alert</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainMultipleSelect' as never)}>
+                    <Text style={style.text}>Domain Multiple Select</Text>
+                </TouchableOpacity>
             </View>
         </DomainMainContainer>
     )

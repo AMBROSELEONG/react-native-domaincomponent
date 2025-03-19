@@ -9,15 +9,13 @@
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "lib": ["ESNext"],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "noEmit": true,
+    "moduleResolution": "node",
+    "noEmit": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noStrictGenericChecks": false,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -26,6 +24,5 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "verbatimModuleSyntax": true
   }
 }

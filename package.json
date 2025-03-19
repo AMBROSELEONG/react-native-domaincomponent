@@ -53,16 +53,16 @@
     "form component",
     "react native ui",
     "react native component",
-    "TextInput", 
-    "SelectBox", 
-    "CheckBox", 
-    "Radio", 
-    "Slider", 
-    "HelperText", 
-    "Dropdown Menu", 
-    "MainContainer", 
-    "Loading", 
-    "Alert", 
+    "TextInput",
+    "SelectBox",
+    "CheckBox",
+    "Radio",
+    "Slider",
+    "HelperText",
+    "Dropdown Menu",
+    "MainContainer",
+    "Loading",
+    "Alert",
     "Modal",
     "Header"
   ],
@@ -105,8 +105,9 @@
     "@types/react": "^18.2.44"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": ">=17.0.0 || >=18.0.0",
+    "react-native": ">=0.68.0",
+    "expo": "^49.0.0"
   },
   "workspaces": [
     "example"
