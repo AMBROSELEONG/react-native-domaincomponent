@@ -292,11 +292,11 @@ export const DropdownMenuCSS = StyleSheet.create({
 export const HeaderCSS = StyleSheet.create({
   mainContainer: {
     width: '100%',
-    flexDirection: 'row', 
+    flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 10,
-},
+  },
   headerView: {
     height: Dimensions.get("screen").width / 6,
     flexDirection: 'row',
@@ -314,5 +314,34 @@ export const HeaderCSS = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     flex: 1,
+  },
+})
+
+export const AlertCSS = StyleSheet.create({
+  container: {
+    position: "absolute",
+    top: 0,
+    left: "20%",
+    right: "20%",
+    zIndex: 10,
+    padding: 20,
+    borderRadius: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+  },
+  content: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  icon: {
+    marginRight: 10,
+    color: '#fff',
+  },
+  text: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: '#fff'
   },
 })

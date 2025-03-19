@@ -37,6 +37,9 @@ const Home = () => {
                 <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainHeader' as never)}>
                     <Text style={style.text}>Domain Header</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={style.button} onPress={() => navigation.navigate('DomainAlert' as never)}>
+                    <Text style={style.text}>Domain Alert</Text>
+                </TouchableOpacity>
             </View>
         </DomainMainContainer>
     )

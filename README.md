@@ -577,6 +577,59 @@ const DomainHeaderExample = () => {
 export default DomainHeaderExample;
 ```
 
+# DomainAlert
+
+## Description
+`DomainAlert` is a React Native component that provides an alert notification system. It supports three types of alerts: success, failed, and warning. The alerts are displayed temporarily and automatically disappear after a set duration.
+
+![image](https://github.com/user-attachments/assets/0671b44c-c5f2-4dc0-99ab-595cfd2a60fc)
+
+### Example Usage
+```tsx
+import { showAlert, DomainMainContainer, DomainAlert } from "domaincomponent";
+import { Button, StatusBar } from "react-native";
+
+const DomainAlertExample = () => {
+    const success = () => {
+        showAlert({ title: "Operation Successful!", type: 'success' });
+    };
+
+    const failed = () => {
+        showAlert({ title: "Operation Failed!", type: 'failed' });
+    };
+
+    const warning = () => {
+        showAlert({ title: "Operation Warning!", type: 'warning' });
+    };
+
+    return (
+        <DomainMainContainer>
+            <StatusBar />
+            <DomainAlert />
+            <Button title="Success" onPress={success} />
+            <Button title="Failed" onPress={failed} />
+            <Button title="Warning" onPress={warning} />
+        </DomainMainContainer>
+    );
+};
+
+export default DomainAlertExample;
+```
+## Props Table
+
+| Prop | Type | Required | Description |
+|------|------|---------|-------------|
+| `title` | `string` | ✅ Yes | The text displayed in the alert. |
+| `type` | `'success' , 'failed' , 'warning'` | ❌ No | The alert type, affecting its appearance. |
+| `duration` | `number` | ❌ No | Time (in ms) before the alert disappears. |
+
+## Notes
+- Ensure that `DomainAlert` is included in your component tree for the alerts to be displayed correctly.
+- The alert automatically disappears after the specified duration.
+- The `showAlert` function can be called anywhere in the app to display an alert.
+
+--- 
+
 ## License
 
 MIT

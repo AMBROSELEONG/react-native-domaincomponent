@@ -1,7 +1,7 @@
 {
   "name": "domaincomponent",
-  "version": "1.5.0",
-  "description": "domain ui component",
+  "version": "1.6.0",
+  "description": "react native ui component Produced with Domain Connect Company",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "react-native": "src/index.tsx",
@@ -50,7 +50,21 @@
     "react-native",
     "ios",
     "android",
-    "form component"
+    "form component",
+    "react native ui",
+    "react native component",
+    "TextInput", 
+    "SelectBox", 
+    "CheckBox", 
+    "Radio", 
+    "Slider", 
+    "HelperText", 
+    "Dropdown Menu", 
+    "MainContainer", 
+    "Loading", 
+    "Alert", 
+    "Modal",
+    "Header"
   ],
   "repository": {
     "type": "git",
