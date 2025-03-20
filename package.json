@@ -1,6 +1,6 @@
 {
   "name": "domaincomponent",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "react native ui component Produced with Domain Connect Company",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
