@@ -1,17 +1,17 @@
 declare module "domaincomponent" {
     export function myFunction(): string;
-    export const DomainTextInput: any;
-    export const DomainLoading: any;
-    export const DomainSwitchButton: any;
-    export const DomainSelect: any;
-    export const DomainMainContainer: any;
-    export const DomainModal: any;
-    export const DomainCheckbox: any;
-    export const DomainRadioGroup: any;
-    export const DomainSlider: any;
-    export const DomainHelperText: any;
-    export const DomainDropdownMenu: any;
-    export const DomainHeader: any;
-    export const DomainAlert: any;
+    export const DomainMainContainer: React.FC<any>;
+    export const DomainAlert: React.FC<any>;
+    export const DomainCheckbox: React.FC<any>;
+    export const DomainDropdownMenu: React.FC<any>;
+    export const DomainHeader: React.FC<any>;
+    export const DomainHelperText: React.FC<any>;
+    export const DomainLoading: React.FC<any>;
+    export const DomainModal: React.FC<any>;
+    export const DomainRadioGroup: React.FC<any>;
+    export const DomainSelect: React.FC<any>;
+    export const DomainSlider: React.FC<any>;
+    export const DomainSwitchButton: React.FC<any>;
+    export const DomainTextInput: React.FC<any>;
     export function showAlert(): void;
 }
