@@ -4,6 +4,7 @@
     "paths": {
       "domaincomponent": ["./src/index"]
     },
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "declaration": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
