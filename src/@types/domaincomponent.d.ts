@@ -14,4 +14,5 @@ declare module "domaincomponent" {
     export const DomainSwitchButton: React.FC<any>;
     export const DomainTextInput: React.FC<any>;
     export function showAlert(): void;
+    export const DomainMultipleSelect: React.FC<any>;
 }

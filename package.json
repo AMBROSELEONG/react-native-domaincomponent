@@ -105,9 +105,9 @@
     "@types/react": "^18.2.44"
   },
   "peerDependencies": {
+    "expo": "^49.0.0",
     "react": ">=17.0.0 || >=18.0.0",
-    "react-native": ">=0.68.0",
-    "expo": "^49.0.0"
+    "react-native": ">=0.68.0"
   },
   "workspaces": [
     "example"
